@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Southwest WiFi Solutions UK</title>
-    <meta name="description" content="Southwest WiFi Solutions UK — reliable WiFi and networking, beautifully simple.">
+    <meta name="description" content="Southwest WiFi Solutions UK — reliable WiFi and networking solutions.">
 
     <style>
         :root {
-            --black: #000;
-            --white: #f5f5f7;
-            --grey: #86868b;
-            --cyan: #00d9e8;
-            --light: #f5f5f7;
-            --dark-section: #050607;
+            --black: #1d1d1f;
+            --grey: #6e6e73;
+            --light-grey: #f5f5f7;
+            --white: #fff;
+            --blue: #0071e3;
+            --cyan: #00a8b5;
         }
 
         * {
@@ -36,8 +36,9 @@
                 "Helvetica Neue",
                 Arial,
                 sans-serif;
-            background: var(--black);
-            color: var(--white);
+
+            background: #fff;
+            color: var(--black);
             -webkit-font-smoothing: antialiased;
         }
 
@@ -56,13 +57,15 @@
             height: 52px;
             z-index: 1000;
 
-            background: rgba(0, 0, 0, .72);
+            background: rgba(255,255,255,.82);
             backdrop-filter: saturate(180%) blur(20px);
             -webkit-backdrop-filter: saturate(180%) blur(20px);
+
+            border-bottom: 1px solid rgba(0,0,0,.08);
         }
 
         .nav-inner {
-            max-width: 980px;
+            max-width: 1024px;
             height: 100%;
             margin: auto;
             padding: 0 22px;
@@ -75,7 +78,8 @@
         .logo {
             font-size: 15px;
             font-weight: 600;
-            letter-spacing: -.2px;
+            letter-spacing: -.25px;
+            white-space: nowrap;
         }
 
         .logo span {
@@ -85,360 +89,285 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 31px;
             list-style: none;
         }
 
         .nav-links a {
-            color: rgba(255,255,255,.78);
+            color: rgba(0,0,0,.72);
             font-size: 12px;
-            transition: .2s;
+            transition: color .2s ease;
         }
 
         .nav-links a:hover {
-            color: white;
+            color: #000;
         }
 
         .nav-contact {
-            color: var(--cyan) !important;
+            color: var(--blue) !important;
         }
 
         /* HERO */
 
         .hero {
             min-height: 100vh;
-            background: #000;
+            padding: 52px 20px 0;
+
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+
             text-align: center;
             overflow: hidden;
-            position: relative;
+
+            background:
+                radial-gradient(
+                    circle at 50% 65%,
+                    rgba(0,190,210,.12),
+                    transparent 34%
+                ),
+                #fff;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
-            padding: 100px 22px 80px;
+            width: 100%;
+            max-width: 1100px;
+            padding: 70px 20px 90px;
         }
 
         .eyebrow {
             color: var(--cyan);
             font-size: 17px;
+            line-height: 1.2;
             font-weight: 600;
-            margin-bottom: 18px;
-            letter-spacing: -.3px;
+            margin-bottom: 20px;
+            letter-spacing: -.2px;
         }
 
         .hero h1 {
-            font-size: clamp(58px, 10vw, 108px);
-            line-height: .95;
+            font-size: clamp(58px, 9vw, 104px);
+            line-height: .96;
             letter-spacing: -6px;
             font-weight: 700;
         }
 
         .hero h1 span {
             display: block;
-            background: linear-gradient(
-                90deg,
-                #ffffff,
-                #8fffff,
-                #00d9e8
-            );
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #0071e3,
+                    #00b8c8,
+                    #00d5a8
+                );
+
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
         .hero-description {
-            max-width: 600px;
+            max-width: 650px;
             margin: 30px auto 0;
-            color: #a1a1a6;
+
+            color: var(--grey);
             font-size: 21px;
             line-height: 1.45;
-            letter-spacing: -.3px;
+            letter-spacing: -.2px;
         }
 
         .hero-buttons {
-            margin-top: 32px;
             display: flex;
             justify-content: center;
-            gap: 12px;
+            align-items: center;
+            gap: 25px;
+
+            margin-top: 31px;
         }
 
         .button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-height: 42px;
-            padding: 0 22px;
+
+            min-height: 44px;
+            padding: 0 24px;
+
             border-radius: 999px;
-            font-size: 14px;
+
+            font-size: 15px;
             font-weight: 500;
-            transition: .25s;
+
+            transition:
+                transform .2s ease,
+                box-shadow .2s ease;
         }
 
         .button-primary {
-            background: var(--cyan);
-            color: #001113;
+            background: var(--blue);
+            color: white;
         }
 
         .button-primary:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 35px rgba(0,217,232,.25);
+            transform: scale(1.025);
+            box-shadow: 0 8px 25px rgba(0,113,227,.18);
         }
 
         .button-secondary {
-            color: var(--cyan);
+            color: var(--blue);
+            padding-left: 5px;
+            padding-right: 5px;
         }
 
         .button-secondary:hover {
             text-decoration: underline;
         }
 
-        /* HERO NETWORK */
+        /* HERO VISUAL */
 
-        .network {
-            width: min(720px, 90vw);
-            height: 300px;
-            margin: 70px auto -50px;
+        .wifi-visual {
             position: relative;
+
+            width: min(700px, 90vw);
+            height: 300px;
+
+            margin: 65px auto 0;
         }
 
-        .network::before {
-            content: "";
+        .wifi-glow {
             position: absolute;
+
             left: 50%;
-            top: 50%;
-            width: 260px;
-            height: 260px;
+            top: 55%;
+
+            width: 280px;
+            height: 180px;
+
             transform: translate(-50%, -50%);
+
+            background: rgba(0,190,210,.15);
+            filter: blur(55px);
             border-radius: 50%;
-            background: rgba(0,217,232,.09);
-            filter: blur(65px);
         }
 
-        .network-core {
+        .wifi-center {
             position: absolute;
-            width: 76px;
-            height: 76px;
+
             left: 50%;
-            top: 50%;
+            top: 53%;
+
             transform: translate(-50%, -50%);
+
+            width: 70px;
+            height: 70px;
+
             border-radius: 50%;
-            background: #00191b;
-            border: 1px solid rgba(0,217,232,.8);
+
+            background: white;
+
+            border: 1px solid rgba(0,0,0,.08);
+
             box-shadow:
-                0 0 30px rgba(0,217,232,.35),
-                0 0 100px rgba(0,217,232,.18);
+                0 15px 50px rgba(0,0,0,.12),
+                0 0 50px rgba(0,190,210,.15);
         }
 
-        .network-core::after {
+        .wifi-center::after {
             content: "";
+
             position: absolute;
-            width: 13px;
-            height: 13px;
-            background: var(--cyan);
-            border-radius: 50%;
+
             left: 50%;
             top: 50%;
+
+            width: 12px;
+            height: 12px;
+
             transform: translate(-50%, -50%);
-            box-shadow: 0 0 25px var(--cyan);
-        }
 
-        .connection {
-            position: absolute;
-            height: 1px;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(0,217,232,.65),
-                transparent
-            );
-            transform-origin: center;
-        }
-
-        .connection.one {
-            width: 330px;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%) rotate(25deg);
-        }
-
-        .connection.two {
-            width: 330px;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%) rotate(-25deg);
-        }
-
-        .connection.three {
-            width: 450px;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%) rotate(90deg);
-        }
-
-        .network-dot {
-            position: absolute;
-            width: 7px;
-            height: 7px;
-            background: var(--cyan);
             border-radius: 50%;
-            box-shadow: 0 0 14px var(--cyan);
+
+            background: var(--cyan);
+
+            box-shadow:
+                0 0 20px rgba(0,190,210,.7);
         }
 
-        .dot-one {
-            left: 15%;
-            top: 28%;
+        .wifi-ring {
+            position: absolute;
+
+            left: 50%;
+            top: 53%;
+
+            transform: translate(-50%, -50%);
+
+            border: 1px solid rgba(0,150,170,.25);
+            border-radius: 50%;
         }
 
-        .dot-two {
-            right: 15%;
-            top: 28%;
+        .ring-one {
+            width: 170px;
+            height: 170px;
         }
 
-        .dot-three {
-            left: 19%;
-            bottom: 24%;
+        .ring-two {
+            width: 290px;
+            height: 290px;
         }
 
-        .dot-four {
-            right: 19%;
-            bottom: 24%;
+        .ring-three {
+            width: 420px;
+            height: 420px;
+            opacity: .45;
         }
 
-        /* WHITE SECTION */
+        /* PRODUCT INTRO */
 
-        .light-section {
-            background: var(--light);
-            color: #1d1d1f;
+        .intro {
+            background: var(--light-grey);
             text-align: center;
-            padding: 150px 22px;
+
+            padding: 170px 22px;
         }
 
-        .light-section .eyebrow {
-            color: #008c99;
-        }
-
-        .light-section h2 {
-            max-width: 850px;
+        .intro h2 {
+            max-width: 900px;
             margin: auto;
-            font-size: clamp(45px, 7vw, 82px);
+
+            font-size: clamp(48px, 7vw, 84px);
             line-height: .98;
             letter-spacing: -5px;
-            font-weight: 700;
         }
 
-        .light-section h2 span {
-            color: #008c99;
+        .intro h2 span {
+            color: var(--blue);
         }
 
-        .light-description {
+        .intro p {
             max-width: 650px;
+
             margin: 32px auto 0;
-            color: #6e6e73;
+
+            color: var(--grey);
             font-size: 20px;
             line-height: 1.5;
-        }
-
-        /* SERVICES */
-
-        .services-section {
-            background: var(--dark-section);
-            padding: 150px 22px;
-        }
-
-        .section-heading {
-            max-width: 980px;
-            margin: auto;
-        }
-
-        .section-heading .eyebrow {
-            font-size: 17px;
-        }
-
-        .section-heading h2 {
-            font-size: clamp(44px, 7vw, 76px);
-            line-height: 1;
-            letter-spacing: -4px;
-            max-width: 750px;
-        }
-
-        .section-heading p {
-            max-width: 580px;
-            color: #86868b;
-            font-size: 19px;
-            margin-top: 25px;
-            line-height: 1.5;
-        }
-
-        .service-grid {
-            max-width: 980px;
-            margin: 90px auto 0;
-
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
-
-        .service {
-            min-height: 380px;
-            padding: 38px;
-            border-radius: 28px;
-            background: #111214;
-            position: relative;
-            overflow: hidden;
-            transition: .3s;
-        }
-
-        .service:hover {
-            transform: translateY(-5px);
-            background: #161719;
-        }
-
-        .service::after {
-            content: "";
-            position: absolute;
-            width: 180px;
-            height: 180px;
-            right: -80px;
-            bottom: -80px;
-            border-radius: 50%;
-            background: rgba(0,217,232,.08);
-            filter: blur(30px);
-        }
-
-        .service-icon {
-            font-size: 38px;
-            color: var(--cyan);
-            margin-bottom: 100px;
-        }
-
-        .service h3 {
-            font-size: 25px;
-            letter-spacing: -.8px;
-            margin-bottom: 12px;
-        }
-
-        .service p {
-            color: #86868b;
-            font-size: 15px;
-            line-height: 1.6;
         }
 
         /* FEATURE */
 
         .feature {
-            background: #000;
-            padding: 170px 22px;
+            padding: 170px 22px 0;
+            background: #fff;
             text-align: center;
+            overflow: hidden;
         }
 
         .feature h2 {
-            max-width: 850px;
+            max-width: 900px;
             margin: auto;
-            font-size: clamp(45px, 7vw, 82px);
+
+            font-size: clamp(46px, 7vw, 82px);
             line-height: .98;
             letter-spacing: -5px;
         }
@@ -448,51 +377,235 @@
         }
 
         .feature p {
-            max-width: 580px;
+            max-width: 600px;
             margin: 30px auto 0;
-            color: #86868b;
-            font-size: 19px;
+
+            color: var(--grey);
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .feature-device {
+            position: relative;
+
+            width: min(820px, 90vw);
+            height: 430px;
+
+            margin: 100px auto 0;
+
+            border-radius: 42px 42px 0 0;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #f9ffff,
+                    #d9f8fa
+                );
+
+            box-shadow:
+                0 -20px 80px rgba(0,180,190,.08);
+
+            overflow: hidden;
+        }
+
+        .feature-device::before {
+            content: "";
+
+            position: absolute;
+
+            width: 360px;
+            height: 360px;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0,180,195,.18),
+                    transparent 68%
+                );
+        }
+
+        .feature-device::after {
+            content: "WiFi";
+
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            font-size: 80px;
+            font-weight: 700;
+            letter-spacing: -5px;
+
+            color: rgba(0,120,140,.14);
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: var(--light-grey);
+            padding: 150px 22px;
+        }
+
+        .services-header {
+            max-width: 1024px;
+            margin: auto;
+        }
+
+        .services-header h2 {
+            max-width: 800px;
+
+            font-size: clamp(46px, 7vw, 78px);
+            line-height: .98;
+            letter-spacing: -5px;
+        }
+
+        .services-header p {
+            max-width: 600px;
+
+            margin-top: 28px;
+
+            color: var(--grey);
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .service-grid {
+            max-width: 1024px;
+            margin: 80px auto 0;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .service {
+            min-height: 430px;
+
+            padding: 40px;
+
+            background: white;
+            border-radius: 28px;
+
+            display: flex;
+            flex-direction: column;
+
+            box-shadow:
+                0 2px 12px rgba(0,0,0,.035);
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .service:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 18px 40px rgba(0,0,0,.08);
+        }
+
+        .service-icon {
+            font-size: 42px;
+            color: var(--blue);
+
+            margin-bottom: auto;
+        }
+
+        .service h3 {
+            font-size: 28px;
+            letter-spacing: -1px;
+            margin-bottom: 14px;
+        }
+
+        .service p {
+            color: var(--grey);
+            font-size: 16px;
+            line-height: 1.55;
+        }
+
+        /* BIG STATEMENT */
+
+        .statement {
+            background: #fff;
+            text-align: center;
+            padding: 180px 22px;
+        }
+
+        .statement h2 {
+            max-width: 900px;
+            margin: auto;
+
+            font-size: clamp(48px, 8vw, 92px);
+            line-height: .95;
+            letter-spacing: -6px;
+        }
+
+        .statement h2 span {
+            color: var(--blue);
+        }
+
+        .statement p {
+            max-width: 600px;
+            margin: 32px auto 0;
+
+            color: var(--grey);
+            font-size: 20px;
             line-height: 1.5;
         }
 
         /* CTA */
 
         .cta {
-            background: #f5f5f7;
-            color: #1d1d1f;
+            background: var(--light-grey);
             text-align: center;
-            padding: 150px 22px;
+
+            padding: 160px 22px;
         }
 
         .cta h2 {
-            font-size: clamp(45px, 7vw, 78px);
+            max-width: 800px;
+            margin: auto;
+
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: .98;
             letter-spacing: -5px;
-            line-height: 1;
         }
 
         .cta p {
-            color: #6e6e73;
-            font-size: 19px;
-            margin: 25px auto 32px;
-            max-width: 520px;
-        }
+            max-width: 550px;
+            margin: 28px auto 32px;
 
-        .cta .button-primary {
-            display: inline-flex;
+            color: var(--grey);
+            font-size: 20px;
+            line-height: 1.5;
         }
 
         /* FOOTER */
 
         footer {
-            background: #f5f5f7;
+            background: var(--light-grey);
+
+            border-top: 1px solid rgba(0,0,0,.08);
+
+            padding: 32px 22px;
+
             color: #6e6e73;
-            padding: 35px 22px;
             font-size: 12px;
         }
 
         .footer-inner {
-            max-width: 980px;
+            max-width: 1024px;
             margin: auto;
+
             display: flex;
             justify-content: space-between;
             gap: 20px;
@@ -503,7 +616,7 @@
         @media (max-width: 800px) {
 
             .nav-links {
-                gap: 14px;
+                gap: 15px;
             }
 
             .nav-links li:nth-child(2),
@@ -511,13 +624,13 @@
                 display: none;
             }
 
-            .hero-description {
-                font-size: 18px;
-            }
-
-            .network {
-                transform: scale(.8);
-                margin-bottom: -30px;
+            .hero h1,
+            .intro h2,
+            .feature h2,
+            .statement h2,
+            .cta h2,
+            .services-header h2 {
+                letter-spacing: -3px;
             }
 
             .service-grid {
@@ -525,17 +638,21 @@
             }
 
             .service {
-                min-height: 300px;
+                min-height: 330px;
             }
 
-            .service-icon {
-                margin-bottom: 70px;
+            .feature-device {
+                height: 300px;
+            }
+
+            .ring-three {
+                display: none;
             }
         }
 
         @media (max-width: 500px) {
 
-            .nav {
+            .nav-inner {
                 padding: 0 16px;
             }
 
@@ -543,20 +660,21 @@
                 gap: 12px;
             }
 
-            .hero h1,
-            .light-section h2,
-            .feature h2,
-            .cta h2 {
-                letter-spacing: -3px;
+            .hero-description,
+            .intro p,
+            .feature p,
+            .statement p,
+            .cta p {
+                font-size: 18px;
             }
 
             .hero-buttons {
                 flex-direction: column;
-                align-items: center;
+                gap: 8px;
             }
 
-            .network {
-                transform: scale(.65);
+            .wifi-visual {
+                transform: scale(.72);
                 margin-top: 30px;
             }
 
@@ -577,9 +695,18 @@
         </a>
 
         <ul class="nav-links">
-            <li><a href="/swwsuk/">Home</a></li>
-            <li><a href="/swwsuk/about/">About</a></li>
-            <li><a href="/swwsuk/services/">Services</a></li>
+            <li>
+                <a href="/swwsuk/">Home</a>
+            </li>
+
+            <li>
+                <a href="/swwsuk/about/">About</a>
+            </li>
+
+            <li>
+                <a href="/swwsuk/services/">Services</a>
+            </li>
+
             <li>
                 <a class="nav-contact" href="/swwsuk/contact/">
                     Contact
@@ -605,26 +732,26 @@
 
             <h1>
                 WiFi.
-                <span>Simply better.</span>
+                <span>It just works.</span>
             </h1>
 
             <p class="hero-description">
-                Reliable wireless connectivity for the places
-                where you live, work and connect.
+                Reliable connectivity, thoughtfully designed
+                for homes and businesses across the Southwest.
             </p>
 
             <div class="hero-buttons">
 
                 <a
-                    href="/swwsuk/services/"
                     class="button button-primary"
+                    href="/swwsuk/services/"
                 >
                     Explore services
                 </a>
 
                 <a
-                    href="/swwsuk/contact/"
                     class="button button-secondary"
+                    href="/swwsuk/contact/"
                 >
                     Learn more →
                 </a>
@@ -632,18 +759,15 @@
             </div>
 
 
-            <div class="network">
+            <div class="wifi-visual">
 
-                <div class="connection one"></div>
-                <div class="connection two"></div>
-                <div class="connection three"></div>
+                <div class="wifi-glow"></div>
 
-                <div class="network-core"></div>
+                <div class="wifi-ring ring-three"></div>
+                <div class="wifi-ring ring-two"></div>
+                <div class="wifi-ring ring-one"></div>
 
-                <div class="network-dot dot-one"></div>
-                <div class="network-dot dot-two"></div>
-                <div class="network-dot dot-three"></div>
-                <div class="network-dot dot-four"></div>
+                <div class="wifi-center"></div>
 
             </div>
 
@@ -654,44 +778,66 @@
 
     <!-- INTRO -->
 
-    <section class="light-section">
+    <section class="intro">
+
+        <h2>
+            Good WiFi isn't
+            something you should
+            <span>have to think about.</span>
+        </h2>
+
+        <p>
+            Your network should quietly do its job —
+            keeping your devices connected without
+            complicated setup or constant troubleshooting.
+        </p>
+
+    </section>
+
+
+    <!-- FEATURE -->
+
+    <section class="feature">
 
         <div class="eyebrow">
-            Connectivity, rethought.
+            Built around your connection
         </div>
 
         <h2>
-            Great WiFi should
-            <span>just work.</span>
+            A network that
+            <span>fits your space.</span>
         </h2>
 
-        <p class="light-description">
-            We design and configure wireless networks with
-            reliable coverage, straightforward setup and
-            everyday performance in mind.
+        <p>
+            We look at how your property is used,
+            where coverage matters and what your
+            network needs to handle.
         </p>
+
+        <div class="feature-device"></div>
 
     </section>
 
 
     <!-- SERVICES -->
 
-    <section class="services-section">
+    <section class="services">
 
-        <div class="section-heading">
+        <div class="services-header">
 
             <div class="eyebrow">
-                What we do
+                Services
             </div>
 
             <h2>
-                Everything you need.
-                Nothing you don't.
+                Everything you need
+                to stay connected.
             </h2>
 
             <p>
-                From installing new WiFi to improving an existing
-                network, we focus on the connection that matters.
+                From getting started to fixing an existing
+                network, Southwest WiFi Solutions UK
+                provides practical networking services.
             </p>
 
         </div>
@@ -705,14 +851,17 @@
                     ◉
                 </div>
 
-                <h3>
-                    WiFi Installation
-                </h3>
+                <div>
+                    <h3>
+                        WiFi Installation
+                    </h3>
 
-                <p>
-                    Wireless coverage designed around your
-                    property, devices and everyday use.
-                </p>
+                    <p>
+                        Get reliable wireless coverage
+                        designed around your property
+                        and the way you use it.
+                    </p>
+                </div>
 
             </article>
 
@@ -723,14 +872,17 @@
                     ⌁
                 </div>
 
-                <h3>
-                    Network Setup
-                </h3>
+                <div>
+                    <h3>
+                        Network Setup
+                    </h3>
 
-                <p>
-                    Router and access point configuration
-                    for a stable and dependable network.
-                </p>
+                    <p>
+                        Router and access point
+                        configuration for a clean,
+                        dependable network.
+                    </p>
+                </div>
 
             </article>
 
@@ -741,15 +893,17 @@
                     ↗
                 </div>
 
-                <h3>
-                    WiFi Improvement
-                </h3>
+                <div>
+                    <h3>
+                        WiFi Improvement
+                    </h3>
 
-                <p>
-                    Practical solutions for weak coverage,
-                    unreliable connections and network
-                    performance issues.
-                </p>
+                    <p>
+                        Improve weak coverage,
+                        connection problems and
+                        everyday network performance.
+                    </p>
+                </div>
 
             </article>
 
@@ -758,23 +912,20 @@
     </section>
 
 
-    <!-- FEATURE -->
+    <!-- STATEMENT -->
 
-    <section class="feature">
-
-        <div class="eyebrow">
-            Designed around you.
-        </div>
+    <section class="statement">
 
         <h2>
-            One network.
-            <span>Every connection.</span>
+            From one device
+            to the whole
+            <span>home.</span>
         </h2>
 
         <p>
-            Every home and business is different. We take
-            the environment and the way the network is used
-            into account when planning a solution.
+            Phones, laptops, TVs, consoles, smart devices
+            and everything in between. Your network should
+            be ready for all of them.
         </p>
 
     </section>
@@ -789,17 +940,17 @@
         </div>
 
         <h2>
-            Ready to get connected?
+            Let's get you connected.
         </h2>
 
         <p>
-            Let's talk about your WiFi and find a solution
-            that works for you.
+            Tell us what you're dealing with and
+            we'll help you find the right solution.
         </p>
 
         <a
-            href="/swwsuk/contact/"
             class="button button-primary"
+            href="/swwsuk/contact/"
         >
             Get in touch
         </a>
