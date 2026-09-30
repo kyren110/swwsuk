@@ -1,1 +1,756 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Southwest WiFi Solutions UK</title>
+    <meta name="description" content="Southwest WiFi Solutions UK — Reliable WiFi, networking and connectivity solutions.">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-mark">SW</span>
+            <span>Southwest WiFi Solutions</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about/">About</a>
+            <a href="services/">Services</a>
+            <a href="contact/">Contact</a>
+        </nav>
+
+        <a href="contact/" class="nav-button">Get in touch</a>
+    </header>
+
+
+    <!-- Hero -->
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    <span class="status-dot"></span>
+                    WiFi &amp; Networking Solutions
+                </div>
+
+                <h1>
+                    Better WiFi.<br>
+                    <span>Better connected.</span>
+                </h1>
+
+                <p class="hero-text">
+                    Reliable WiFi and networking solutions for homes and businesses
+                    across the Southwest of the UK.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="contact/" class="primary-button">
+                        Get started
+                        <span>→</span>
+                    </a>
+
+                    <a href="services/" class="secondary-button">
+                        Explore our services
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Network visual -->
+            <div class="network-visual">
+
+                <div class="glow"></div>
+
+                <div class="network-circle circle-one"></div>
+                <div class="network-circle circle-two"></div>
+                <div class="network-circle circle-three"></div>
+
+                <div class="router">
+                    <div class="router-light"></div>
+                    <div class="router-line"></div>
+                    <div class="router-line"></div>
+                    <div class="router-line"></div>
+                </div>
+
+                <div class="signal signal-one"></div>
+                <div class="signal signal-two"></div>
+                <div class="signal signal-three"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Services -->
+        <section class="services">
+
+            <div class="section-heading">
+                <span>WHAT WE DO</span>
+                <h2>Connectivity without the headache.</h2>
+                <p>
+                    From improving WiFi coverage to designing reliable networks,
+                    we help keep you connected.
+                </p>
+            </div>
+
+            <div class="service-grid">
+
+                <article class="service-card">
+                    <div class="service-icon">⌁</div>
+                    <h3>WiFi Solutions</h3>
+                    <p>
+                        Improve coverage, reliability and performance throughout
+                        your home or business.
+                    </p>
+                    <a href="services/">Learn more →</a>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">⌘</div>
+                    <h3>Network Setup</h3>
+                    <p>
+                        Professionally planned and configured networks designed
+                        around your needs.
+                    </p>
+                    <a href="services/">Learn more →</a>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">◉</div>
+                    <h3>Network Support</h3>
+                    <p>
+                        Troubleshooting and support when your connection isn't
+                        performing the way it should.
+                    </p>
+                    <a href="contact/">Get support →</a>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta">
+
+            <div>
+                <span>READY TO GET CONNECTED?</span>
+                <h2>Let's build a better network.</h2>
+            </div>
+
+            <a href="contact/" class="primary-button">
+                Contact us
+                <span>→</span>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-brand">
+            <span class="logo-mark">SW</span>
+            <div>
+                <strong>Southwest WiFi Solutions</strong>
+                <p>WiFi &amp; networking solutions across the UK.</p>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="about/">About</a>
+            <a href="services/">Services</a>
+            <a href="contact/">Contact</a>
+        </div>
+
+        <p class="copyright">
+            © 2026 Southwest WiFi Solutions UK. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```
+
+### `css/style.css`
+
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #05070a;
+    --dark: #090d12;
+    --card: #0d131b;
+    --blue: #1683ff;
+    --blue-light: #54a8ff;
+    --text: #f5f7fa;
+    --muted: #8d99a8;
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+
+/* Navigation */
+
+.navbar {
+    height: 78px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+
+    background: rgba(5, 7, 10, 0.8);
+    backdrop-filter: blur(20px);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: white;
+    text-decoration: none;
+    font-weight: 650;
+}
+
+.logo-mark {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #1683ff, #0754b8);
+
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+
+    box-shadow: 0 0 25px rgba(22, 131, 255, 0.25);
+}
+
+nav {
+    display: flex;
+    gap: 32px;
+}
+
+nav a,
+.footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+nav a:hover,
+.footer-links a:hover {
+    color: white;
+}
+
+.nav-button {
+    text-decoration: none;
+    color: white;
+
+    padding: 10px 18px;
+
+    border: 1px solid rgba(22, 131, 255, 0.5);
+    border-radius: 8px;
+
+    background: rgba(22, 131, 255, 0.1);
+
+    transition: 0.2s;
+}
+
+.nav-button:hover {
+    background: var(--blue);
+}
+
+
+/* Hero */
+
+.hero {
+    min-height: calc(100vh - 78px);
+
+    padding: 80px 8%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    width: 700px;
+    height: 700px;
+
+    background: rgba(0, 100, 255, 0.08);
+    filter: blur(150px);
+
+    top: -250px;
+    left: -250px;
+
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+}
+
+.eyebrow,
+.section-heading > span,
+.cta span {
+    color: var(--blue-light);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 24px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    background: #27e77b;
+    border-radius: 50%;
+
+    box-shadow: 0 0 12px #27e77b;
+}
+
+h1 {
+    font-size: clamp(52px, 7vw, 92px);
+    line-height: 0.98;
+    letter-spacing: -4px;
+    margin-bottom: 30px;
+}
+
+h1 span {
+    color: var(--blue);
+}
+
+.hero-text {
+    color: var(--muted);
+    font-size: 19px;
+    max-width: 570px;
+    margin-bottom: 38px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 14px 22px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.primary-button {
+    color: white;
+    background: var(--blue);
+    box-shadow: 0 10px 35px rgba(22, 131, 255, 0.25);
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+    background: #3294ff;
+}
+
+.secondary-button {
+    color: white;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.secondary-button:hover {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+
+/* Network visual */
+
+.network-visual {
+    height: 520px;
+    position: relative;
+
+    display: grid;
+    place-items: center;
+}
+
+.glow {
+    width: 220px;
+    height: 220px;
+
+    position: absolute;
+
+    background: var(--blue);
+    filter: blur(100px);
+    opacity: 0.18;
+}
+
+.network-circle {
+    position: absolute;
+
+    border: 1px solid rgba(22, 131, 255, 0.2);
+    border-radius: 50%;
+
+    animation: pulse 4s infinite ease-in-out;
+}
+
+.circle-one {
+    width: 220px;
+    height: 220px;
+}
+
+.circle-two {
+    width: 370px;
+    height: 370px;
+    animation-delay: 1s;
+}
+
+.circle-three {
+    width: 520px;
+    height: 520px;
+    animation-delay: 2s;
+}
+
+.router {
+    width: 150px;
+    height: 85px;
+
+    background: linear-gradient(145deg, #161e29, #080b10);
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.7),
+        0 0 60px rgba(22, 131, 255, 0.15);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 20px;
+
+    z-index: 2;
+}
+
+.router-light {
+    width: 7px;
+    height: 7px;
+
+    background: #25e879;
+    border-radius: 50%;
+
+    box-shadow: 0 0 12px #25e879;
+}
+
+.router-line {
+    width: 100%;
+    height: 2px;
+
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.signal {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: var(--blue-light);
+    box-shadow: 0 0 20px var(--blue);
+}
+
+.signal-one {
+    top: 25%;
+    right: 20%;
+}
+
+.signal-two {
+    bottom: 25%;
+    left: 20%;
+}
+
+.signal-three {
+    top: 15%;
+    left: 28%;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(0.97);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.03);
+        opacity: 1;
+    }
+}
+
+
+/* Services */
+
+.services {
+    padding: 120px 8%;
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+}
+
+.section-heading {
+    max-width: 650px;
+    margin-bottom: 55px;
+}
+
+.section-heading h2 {
+    font-size: clamp(36px, 5vw, 58px);
+    letter-spacing: -2px;
+    line-height: 1.05;
+    margin: 14px 0 18px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 17px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    padding: 32px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    transition: 0.25s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(22, 131, 255, 0.35);
+}
+
+.service-icon {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 10px;
+
+    background: rgba(22, 131, 255, 0.1);
+    color: var(--blue-light);
+
+    font-size: 24px;
+}
+
+.service-card h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.service-card a {
+    color: var(--blue-light);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* CTA */
+
+.cta {
+    margin: 80px 8%;
+    padding: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    background:
+        radial-gradient(circle at 80% 50%, rgba(22, 131, 255, 0.2), transparent 45%),
+        var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.cta h2 {
+    font-size: 42px;
+    letter-spacing: -1.5px;
+    margin-top: 8px;
+}
+
+
+/* Footer */
+
+footer {
+    padding: 45px 8%;
+
+    border-top: 1px solid var(--border);
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-brand p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.copyright {
+    color: #5f6873;
+    font-size: 12px;
+    text-align: right;
+}
+
+
+/* Mobile */
+
+@media (max-width: 850px) {
+
+    nav {
+        display: none;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 70px;
+    }
+
+    .network-visual {
+        height: 380px;
+        margin-top: 20px;
+    }
+
+    .circle-three {
+        width: 380px;
+        height: 380px;
+    }
+
+    .circle-two {
+        width: 280px;
+        height: 280px;
+    }
+
+    .circle-one {
+        width: 170px;
+        height: 170px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+    }
+
+    .copyright {
+        text-align: left;
+    }
+}
+```
 
