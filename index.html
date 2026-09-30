@@ -1,693 +1,936 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Southwest WiFi Solutions UK</title>
-    <meta name="description" content="Southwest WiFi Solutions UK — reliable WiFi and networking solutions.">
-
-    <style>
-        :root {
-            --black: #1d1d1f;
-            --grey: #6e6e73;
-            --light-grey: #f5f5f7;
-            --white: #fff;
-            --blue: #0071e3;
-            --cyan: #00a8b5;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "SF Pro Display",
-                "SF Pro Text",
-                "Helvetica Neue",
-                Arial,
-                sans-serif;
-
-            background: #fff;
-            color: var(--black);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* NAVIGATION */
-
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 52px;
-            z-index: 1000;
-
-            background: rgba(255,255,255,.82);
-            backdrop-filter: saturate(180%) blur(20px);
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
-
-            border-bottom: 1px solid rgba(0,0,0,.08);
-        }
-
-        .nav-inner {
-            max-width: 1024px;
-            height: 100%;
-            margin: auto;
-            padding: 0 22px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 15px;
-            font-weight: 600;
-            letter-spacing: -.25px;
-            white-space: nowrap;
-        }
-
-        .logo span {
-            color: var(--cyan);
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 31px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: rgba(0,0,0,.72);
-            font-size: 12px;
-            transition: color .2s ease;
-        }
-
-        .nav-links a:hover {
-            color: #000;
-        }
-
-        .nav-contact {
-            color: var(--blue) !important;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 100vh;
-            padding: 52px 20px 0;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            text-align: center;
-            overflow: hidden;
-
-            background:
-                radial-gradient(
-                    circle at 50% 65%,
-                    rgba(0,190,210,.12),
-                    transparent 34%
-                ),
-                #fff;
-        }
-
-        .hero-content {
-            width: 100%;
-            max-width: 1100px;
-            padding: 70px 20px 90px;
-        }
-
-        .eyebrow {
-            color: var(--cyan);
-            font-size: 17px;
-            line-height: 1.2;
-            font-weight: 600;
-            margin-bottom: 20px;
-            letter-spacing: -.2px;
-        }
-
-        .hero h1 {
-            font-size: clamp(58px, 9vw, 104px);
-            line-height: .96;
-            letter-spacing: -6px;
-            font-weight: 700;
-        }
-
-        .hero h1 span {
-            display: block;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #0071e3,
-                    #00b8c8,
-                    #00d5a8
-                );
-
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero-description {
-            max-width: 650px;
-            margin: 30px auto 0;
-
-            color: var(--grey);
-            font-size: 21px;
-            line-height: 1.45;
-            letter-spacing: -.2px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Southwest WiFi Solutions UK</title>
 
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 25px;
+<meta
+    name="description"
+    content="Southwest WiFi Solutions UK. Beautifully simple WiFi and networking solutions."
+>
+
+<style>
 
-            margin-top: 31px;
-        }
+:root {
+    --text: #1d1d1f;
+    --secondary: #6e6e73;
+    --blue: #0071e3;
+    --sky: #5ac8fa;
+    --background: #ffffff;
+    --grey: #f5f5f7;
+    --soft-blue: #eaf6ff;
+}
 
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-            min-height: 44px;
-            padding: 0 24px;
+html {
+    scroll-behavior: smooth;
+}
 
-            border-radius: 999px;
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
 
-            font-size: 15px;
-            font-weight: 500;
+    color: var(--text);
+    background: white;
 
-            transition:
-                transform .2s ease,
-                box-shadow .2s ease;
-        }
+    -webkit-font-smoothing: antialiased;
+}
 
-        .button-primary {
-            background: var(--blue);
-            color: white;
-        }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-        .button-primary:hover {
-            transform: scale(1.025);
-            box-shadow: 0 8px 25px rgba(0,113,227,.18);
-        }
 
-        .button-secondary {
-            color: var(--blue);
-            padding-left: 5px;
-            padding-right: 5px;
-        }
+/* =========================================
+   NAVIGATION
+========================================= */
 
-        .button-secondary:hover {
-            text-decoration: underline;
-        }
+nav {
+    position: fixed;
+    z-index: 1000;
 
-        /* HERO VISUAL */
+    top: 0;
+    left: 0;
 
-        .wifi-visual {
-            position: relative;
+    width: 100%;
+    height: 52px;
 
-            width: min(700px, 90vw);
-            height: 300px;
+    background: rgba(255,255,255,.82);
 
-            margin: 65px auto 0;
-        }
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
 
-        .wifi-glow {
-            position: absolute;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+}
 
-            left: 50%;
-            top: 55%;
+.nav-inner {
+    max-width: 1000px;
 
-            width: 280px;
-            height: 180px;
+    height: 100%;
 
-            transform: translate(-50%, -50%);
+    margin: auto;
+    padding: 0 22px;
 
-            background: rgba(0,190,210,.15);
-            filter: blur(55px);
-            border-radius: 50%;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        .wifi-center {
-            position: absolute;
+.logo {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -.2px;
+}
 
-            left: 50%;
-            top: 53%;
+.logo span {
+    color: var(--blue);
+}
 
-            transform: translate(-50%, -50%);
+.nav-links {
+    display: flex;
+    gap: 30px;
 
-            width: 70px;
-            height: 70px;
+    list-style: none;
+}
 
-            border-radius: 50%;
+.nav-links a {
+    font-size: 12px;
+    color: rgba(0,0,0,.72);
 
-            background: white;
+    transition: color .2s ease;
+}
 
-            border: 1px solid rgba(0,0,0,.08);
+.nav-links a:hover {
+    color: #000;
+}
 
-            box-shadow:
-                0 15px 50px rgba(0,0,0,.12),
-                0 0 50px rgba(0,190,210,.15);
-        }
+.nav-links .contact {
+    color: var(--blue);
+}
 
-        .wifi-center::after {
-            content: "";
 
-            position: absolute;
+/* =========================================
+   HERO
+========================================= */
 
-            left: 50%;
-            top: 50%;
+.hero {
+    min-height: 100vh;
 
-            width: 12px;
-            height: 12px;
+    padding: 52px 20px 0;
 
-            transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            border-radius: 50%;
+    text-align: center;
 
-            background: var(--cyan);
+    background:
+        radial-gradient(
+            ellipse at 50% 78%,
+            rgba(90,200,250,.15),
+            transparent 40%
+        ),
+        #fff;
 
-            box-shadow:
-                0 0 20px rgba(0,190,210,.7);
-        }
+    overflow: hidden;
+}
 
-        .wifi-ring {
-            position: absolute;
+.hero-inner {
+    width: 100%;
+    max-width: 1100px;
 
-            left: 50%;
-            top: 53%;
+    padding: 100px 20px 90px;
+}
 
-            transform: translate(-50%, -50%);
+.hero-eyebrow {
+    color: var(--blue);
 
-            border: 1px solid rgba(0,150,170,.25);
-            border-radius: 50%;
-        }
+    font-size: 17px;
+    font-weight: 600;
 
-        .ring-one {
-            width: 170px;
-            height: 170px;
-        }
+    margin-bottom: 22px;
+}
 
-        .ring-two {
-            width: 290px;
-            height: 290px;
-        }
+.hero h1 {
+    font-size: clamp(60px, 10vw, 112px);
 
-        .ring-three {
-            width: 420px;
-            height: 420px;
-            opacity: .45;
-        }
+    line-height: .94;
 
-        /* PRODUCT INTRO */
+    letter-spacing: -7px;
 
-        .intro {
-            background: var(--light-grey);
-            text-align: center;
+    font-weight: 700;
+}
 
-            padding: 170px 22px;
-        }
+.hero h1 .blue {
+    display: block;
 
-        .intro h2 {
-            max-width: 900px;
-            margin: auto;
+    background:
+        linear-gradient(
+            90deg,
+            #0071e3,
+            #2997ff,
+            #5ac8fa
+        );
 
-            font-size: clamp(48px, 7vw, 84px);
-            line-height: .98;
-            letter-spacing: -5px;
-        }
+    -webkit-background-clip: text;
+    background-clip: text;
 
-        .intro h2 span {
-            color: var(--blue);
-        }
+    color: transparent;
+}
 
-        .intro p {
-            max-width: 650px;
+.hero-subtitle {
+    max-width: 650px;
 
-            margin: 32px auto 0;
+    margin: 32px auto 0;
 
-            color: var(--grey);
-            font-size: 20px;
-            line-height: 1.5;
-        }
+    color: var(--secondary);
 
-        /* FEATURE */
+    font-size: 21px;
 
-        .feature {
-            padding: 170px 22px 0;
-            background: #fff;
-            text-align: center;
-            overflow: hidden;
-        }
+    line-height: 1.45;
+}
 
-        .feature h2 {
-            max-width: 900px;
-            margin: auto;
+.hero-actions {
+    margin-top: 32px;
 
-            font-size: clamp(46px, 7vw, 82px);
-            line-height: .98;
-            letter-spacing: -5px;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        .feature h2 span {
-            color: var(--cyan);
-        }
+    gap: 28px;
+}
 
-        .feature p {
-            max-width: 600px;
-            margin: 30px auto 0;
+.primary-button {
+    display: inline-flex;
 
-            color: var(--grey);
-            font-size: 20px;
-            line-height: 1.5;
-        }
+    align-items: center;
+    justify-content: center;
 
-        .feature-device {
-            position: relative;
+    min-height: 44px;
 
-            width: min(820px, 90vw);
-            height: 430px;
+    padding: 0 24px;
 
-            margin: 100px auto 0;
+    border-radius: 999px;
 
-            border-radius: 42px 42px 0 0;
+    background: var(--blue);
 
-            background:
-                linear-gradient(
-                    145deg,
-                    #f9ffff,
-                    #d9f8fa
-                );
+    color: white;
 
-            box-shadow:
-                0 -20px 80px rgba(0,180,190,.08);
+    font-size: 15px;
+    font-weight: 500;
 
-            overflow: hidden;
-        }
+    transition: transform .2s ease;
+}
 
-        .feature-device::before {
-            content: "";
+.primary-button:hover {
+    transform: scale(1.025);
+}
 
-            position: absolute;
+.text-button {
+    color: var(--blue);
 
-            width: 360px;
-            height: 360px;
+    font-size: 15px;
+}
 
-            left: 50%;
-            top: 50%;
+.text-button:hover {
+    text-decoration: underline;
+}
 
-            transform: translate(-50%, -50%);
 
-            border-radius: 50%;
+/* =========================================
+   ABSTRACT HERO OBJECT
+========================================= */
 
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(0,180,195,.18),
-                    transparent 68%
-                );
-        }
+.hero-art {
+    position: relative;
 
-        .feature-device::after {
-            content: "WiFi";
+    width: min(760px, 90vw);
+    height: 330px;
 
-            position: absolute;
+    margin: 65px auto 0;
+}
 
-            left: 50%;
-            top: 50%;
+.hero-light {
+    position: absolute;
 
-            transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
 
-            font-size: 80px;
-            font-weight: 700;
-            letter-spacing: -5px;
+    width: 480px;
+    height: 200px;
 
-            color: rgba(0,120,140,.14);
-        }
+    transform: translate(-50%, -50%);
 
-        /* SERVICES */
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(90,200,250,.25),
+            transparent 70%
+        );
 
-        .services {
-            background: var(--light-grey);
-            padding: 150px 22px;
-        }
+    filter: blur(35px);
+}
 
-        .services-header {
-            max-width: 1024px;
-            margin: auto;
-        }
+.signal {
+    position: absolute;
 
-        .services-header h2 {
-            max-width: 800px;
+    left: 50%;
+    top: 50%;
 
-            font-size: clamp(46px, 7vw, 78px);
-            line-height: .98;
-            letter-spacing: -5px;
-        }
+    transform: translate(-50%, -50%);
 
-        .services-header p {
-            max-width: 600px;
+    border-radius: 50%;
 
-            margin-top: 28px;
+    border: 1px solid rgba(0,113,227,.10);
+}
 
-            color: var(--grey);
-            font-size: 20px;
-            line-height: 1.5;
-        }
+.signal.one {
+    width: 170px;
+    height: 170px;
+}
 
-        .service-grid {
-            max-width: 1024px;
-            margin: 80px auto 0;
+.signal.two {
+    width: 320px;
+    height: 320px;
+}
 
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
+.signal.three {
+    width: 500px;
+    height: 500px;
 
-        .service {
-            min-height: 430px;
+    border-color: rgba(0,113,227,.045);
+}
 
-            padding: 40px;
+.signal-core {
+    position: absolute;
 
-            background: white;
-            border-radius: 28px;
+    left: 50%;
+    top: 50%;
 
-            display: flex;
-            flex-direction: column;
+    transform: translate(-50%, -50%);
 
-            box-shadow:
-                0 2px 12px rgba(0,0,0,.035);
+    width: 84px;
+    height: 84px;
 
-            transition:
-                transform .3s ease,
-                box-shadow .3s ease;
-        }
+    border-radius: 50%;
 
-        .service:hover {
-            transform: translateY(-6px);
+    background: rgba(255,255,255,.9);
 
-            box-shadow:
-                0 18px 40px rgba(0,0,0,.08);
-        }
+    border: 1px solid rgba(0,0,0,.06);
 
-        .service-icon {
-            font-size: 42px;
-            color: var(--blue);
+    box-shadow:
+        0 25px 80px rgba(0,113,227,.12);
+}
 
-            margin-bottom: auto;
-        }
+.signal-core::after {
+    content: "";
 
-        .service h3 {
-            font-size: 28px;
-            letter-spacing: -1px;
-            margin-bottom: 14px;
-        }
+    position: absolute;
 
-        .service p {
-            color: var(--grey);
-            font-size: 16px;
-            line-height: 1.55;
-        }
+    left: 50%;
+    top: 50%;
 
-        /* BIG STATEMENT */
+    transform: translate(-50%, -50%);
 
-        .statement {
-            background: #fff;
-            text-align: center;
-            padding: 180px 22px;
-        }
+    width: 13px;
+    height: 13px;
 
-        .statement h2 {
-            max-width: 900px;
-            margin: auto;
+    border-radius: 50%;
 
-            font-size: clamp(48px, 8vw, 92px);
-            line-height: .95;
-            letter-spacing: -6px;
-        }
+    background: var(--sky);
 
-        .statement h2 span {
-            color: var(--blue);
-        }
+    box-shadow:
+        0 0 25px rgba(90,200,250,.5);
+}
 
-        .statement p {
-            max-width: 600px;
-            margin: 32px auto 0;
 
-            color: var(--grey);
-            font-size: 20px;
-            line-height: 1.5;
-        }
+/* =========================================
+   BIG STATEMENT
+========================================= */
 
-        /* CTA */
+.statement {
+    background: var(--grey);
 
-        .cta {
-            background: var(--light-grey);
-            text-align: center;
+    padding: 180px 22px;
 
-            padding: 160px 22px;
-        }
+    text-align: center;
+}
 
-        .cta h2 {
-            max-width: 800px;
-            margin: auto;
+.statement h2 {
+    max-width: 950px;
 
-            font-size: clamp(48px, 7vw, 82px);
-            line-height: .98;
-            letter-spacing: -5px;
-        }
+    margin: auto;
 
-        .cta p {
-            max-width: 550px;
-            margin: 28px auto 32px;
+    font-size: clamp(50px, 8vw, 90px);
 
-            color: var(--grey);
-            font-size: 20px;
-            line-height: 1.5;
-        }
+    line-height: .96;
 
-        /* FOOTER */
+    letter-spacing: -6px;
+}
 
-        footer {
-            background: var(--light-grey);
+.statement h2 span {
+    color: var(--blue);
+}
 
-            border-top: 1px solid rgba(0,0,0,.08);
+.statement p {
+    max-width: 650px;
 
-            padding: 32px 22px;
+    margin: 35px auto 0;
 
-            color: #6e6e73;
-            font-size: 12px;
-        }
+    color: var(--secondary);
 
-        .footer-inner {
-            max-width: 1024px;
-            margin: auto;
+    font-size: 20px;
 
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
+    line-height: 1.5;
+}
 
-        /* MOBILE */
 
-        @media (max-width: 800px) {
+/* =========================================
+   FEATURE SECTION
+========================================= */
 
-            .nav-links {
-                gap: 15px;
-            }
+.feature {
+    background: white;
 
-            .nav-links li:nth-child(2),
-            .nav-links li:nth-child(3) {
-                display: none;
-            }
+    padding: 180px 22px 0;
 
-            .hero h1,
-            .intro h2,
-            .feature h2,
-            .statement h2,
-            .cta h2,
-            .services-header h2 {
-                letter-spacing: -3px;
-            }
+    text-align: center;
+}
 
-            .service-grid {
-                grid-template-columns: 1fr;
-            }
+.feature-eyebrow {
+    color: var(--blue);
 
-            .service {
-                min-height: 330px;
-            }
+    font-size: 17px;
+    font-weight: 600;
 
-            .feature-device {
-                height: 300px;
-            }
+    margin-bottom: 20px;
+}
 
-            .ring-three {
-                display: none;
-            }
-        }
+.feature h2 {
+    max-width: 900px;
 
-        @media (max-width: 500px) {
+    margin: auto;
 
-            .nav-inner {
-                padding: 0 16px;
-            }
+    font-size: clamp(50px, 7.5vw, 86px);
 
-            .nav-links {
-                gap: 12px;
-            }
+    line-height: .97;
 
-            .hero-description,
-            .intro p,
-            .feature p,
-            .statement p,
-            .cta p {
-                font-size: 18px;
-            }
+    letter-spacing: -5px;
+}
 
-            .hero-buttons {
-                flex-direction: column;
-                gap: 8px;
-            }
+.feature h2 span {
+    color: #2997ff;
+}
 
-            .wifi-visual {
-                transform: scale(.72);
-                margin-top: 30px;
-            }
+.feature-description {
+    max-width: 620px;
 
-            .footer-inner {
-                flex-direction: column;
-            }
-        }
-    </style>
+    margin: 30px auto 0;
+
+    color: var(--secondary);
+
+    font-size: 20px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   GIANT PRODUCT VISUAL
+========================================= */
+
+.product-stage {
+    position: relative;
+
+    width: min(1000px, 92vw);
+    height: 500px;
+
+    margin: 100px auto 0;
+
+    border-radius: 44px 44px 0 0;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #edf9ff 48%,
+            #dff5ff 100%
+        );
+
+    box-shadow:
+        0 -20px 100px rgba(0,113,227,.06);
+}
+
+.product-stage::before {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(90,200,250,.18),
+            transparent 65%
+        );
+}
+
+.product-stage::after {
+    content: "SW";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 150px;
+
+    font-weight: 700;
+
+    letter-spacing: -12px;
+
+    color: rgba(0,113,227,.06);
+}
+
+
+/* =========================================
+   SPLIT FEATURE
+========================================= */
+
+.split {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 700px;
+}
+
+.split-visual {
+    min-height: 650px;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(90,200,250,.3),
+            transparent 50%
+        ),
+        #eaf6ff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.orbit {
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0,113,227,.12);
+
+    position: relative;
+}
+
+.orbit::before,
+.orbit::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0,113,227,.10);
+}
+
+.orbit::before {
+    width: 200px;
+    height: 200px;
+}
+
+.orbit::after {
+    width: 100px;
+    height: 100px;
+}
+
+.split-content {
+    padding: 100px 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: white;
+}
+
+.split-content .eyebrow {
+    color: var(--blue);
+
+    font-size: 17px;
+    font-weight: 600;
+
+    margin-bottom: 22px;
+}
+
+.split-content h2 {
+    font-size: clamp(45px, 5vw, 68px);
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+}
+
+.split-content p {
+    max-width: 500px;
+
+    margin-top: 25px;
+
+    color: var(--secondary);
+
+    font-size: 19px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.services {
+    background: var(--grey);
+
+    padding: 170px 22px;
+}
+
+.services-heading {
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+.services-heading .eyebrow {
+    color: var(--blue);
+
+    font-size: 17px;
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+.services-heading h2 {
+    max-width: 850px;
+
+    font-size: clamp(50px, 7vw, 82px);
+
+    line-height: .97;
+
+    letter-spacing: -5px;
+}
+
+.services-heading p {
+    max-width: 600px;
+
+    margin-top: 28px;
+
+    color: var(--secondary);
+
+    font-size: 20px;
+
+    line-height: 1.5;
+}
+
+.service-list {
+    max-width: 1000px;
+
+    margin: 100px auto 0;
+
+    border-top: 1px solid rgba(0,0,0,.10);
+}
+
+.service-item {
+    display: grid;
+
+    grid-template-columns: 80px 1fr auto;
+
+    gap: 30px;
+
+    align-items: center;
+
+    padding: 38px 0;
+
+    border-bottom: 1px solid rgba(0,0,0,.10);
+}
+
+.service-number {
+    color: #8e8e93;
+
+    font-size: 14px;
+}
+
+.service-item h3 {
+    font-size: 27px;
+
+    letter-spacing: -.8px;
+}
+
+.service-item p {
+    color: var(--secondary);
+
+    margin-top: 7px;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+.service-arrow {
+    color: var(--blue);
+
+    font-size: 24px;
+}
+
+
+/* =========================================
+   FINAL STATEMENT
+========================================= */
+
+.final {
+    padding: 190px 22px;
+
+    text-align: center;
+
+    background: white;
+}
+
+.final h2 {
+    max-width: 900px;
+
+    margin: auto;
+
+    font-size: clamp(52px, 8vw, 94px);
+
+    line-height: .94;
+
+    letter-spacing: -6px;
+}
+
+.final h2 span {
+    color: var(--blue);
+}
+
+.final p {
+    max-width: 600px;
+
+    margin: 32px auto;
+
+    color: var(--secondary);
+
+    font-size: 20px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.cta {
+    padding: 170px 22px;
+
+    text-align: center;
+
+    background: var(--soft-blue);
+}
+
+.cta h2 {
+    font-size: clamp(50px, 7vw, 80px);
+
+    line-height: .97;
+
+    letter-spacing: -5px;
+}
+
+.cta p {
+    max-width: 550px;
+
+    margin: 28px auto 35px;
+
+    color: var(--secondary);
+
+    font-size: 20px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: var(--grey);
+
+    padding: 35px 22px;
+
+    border-top: 1px solid rgba(0,0,0,.08);
+
+    color: var(--secondary);
+
+    font-size: 12px;
+}
+
+.footer-inner {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links li:nth-child(2),
+    .nav-links li:nth-child(3) {
+        display: none;
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+    }
+
+    .split-visual {
+        min-height: 400px;
+    }
+
+    .split-content {
+        min-height: 500px;
+
+        padding: 80px 30px;
+    }
+
+    .service-item {
+        grid-template-columns: 35px 1fr auto;
+        gap: 15px;
+    }
+
+    .hero h1,
+    .statement h2,
+    .feature h2,
+    .services-heading h2,
+    .final h2,
+    .cta h2 {
+        letter-spacing: -3px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .nav-inner {
+        padding: 0 16px;
+    }
+
+    .hero-subtitle,
+    .statement p,
+    .feature-description,
+    .split-content p,
+    .services-heading p,
+    .final p,
+    .cta p {
+        font-size: 18px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-art {
+        transform: scale(.7);
+        margin-top: 30px;
+    }
+
+    .product-stage {
+        height: 330px;
+    }
+
+    .product-stage::after {
+        font-size: 100px;
+    }
+
+    .service-item {
+        grid-template-columns: 28px 1fr;
+
+        padding: 30px 0;
+    }
+
+    .service-arrow {
+        display: none;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
+
+<!-- NAVIGATION -->
+
 <nav>
+
     <div class="nav-inner">
 
         <a href="/swwsuk/" class="logo">
@@ -695,6 +938,7 @@
         </a>
 
         <ul class="nav-links">
+
             <li>
                 <a href="/swwsuk/">Home</a>
             </li>
@@ -708,257 +952,337 @@
             </li>
 
             <li>
-                <a class="nav-contact" href="/swwsuk/contact/">
+                <a class="contact" href="/swwsuk/contact/">
                     Contact
                 </a>
             </li>
+
         </ul>
 
     </div>
+
 </nav>
 
 
 <main>
 
-    <!-- HERO -->
 
-    <section class="hero">
+<!-- =========================================
+     HERO
+========================================= -->
 
-        <div class="hero-content">
+<section class="hero">
 
-            <div class="eyebrow">
-                Southwest WiFi Solutions UK
-            </div>
+    <div class="hero-inner">
 
-            <h1>
-                WiFi.
-                <span>It just works.</span>
-            </h1>
-
-            <p class="hero-description">
-                Reliable connectivity, thoughtfully designed
-                for homes and businesses across the Southwest.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a
-                    class="button button-primary"
-                    href="/swwsuk/services/"
-                >
-                    Explore services
-                </a>
-
-                <a
-                    class="button button-secondary"
-                    href="/swwsuk/contact/"
-                >
-                    Learn more →
-                </a>
-
-            </div>
-
-
-            <div class="wifi-visual">
-
-                <div class="wifi-glow"></div>
-
-                <div class="wifi-ring ring-three"></div>
-                <div class="wifi-ring ring-two"></div>
-                <div class="wifi-ring ring-one"></div>
-
-                <div class="wifi-center"></div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- INTRO -->
-
-    <section class="intro">
-
-        <h2>
-            Good WiFi isn't
-            something you should
-            <span>have to think about.</span>
-        </h2>
-
-        <p>
-            Your network should quietly do its job —
-            keeping your devices connected without
-            complicated setup or constant troubleshooting.
-        </p>
-
-    </section>
-
-
-    <!-- FEATURE -->
-
-    <section class="feature">
-
-        <div class="eyebrow">
-            Built around your connection
-        </div>
-
-        <h2>
-            A network that
-            <span>fits your space.</span>
-        </h2>
-
-        <p>
-            We look at how your property is used,
-            where coverage matters and what your
-            network needs to handle.
-        </p>
-
-        <div class="feature-device"></div>
-
-    </section>
-
-
-    <!-- SERVICES -->
-
-    <section class="services">
-
-        <div class="services-header">
-
-            <div class="eyebrow">
-                Services
-            </div>
-
-            <h2>
-                Everything you need
-                to stay connected.
-            </h2>
-
-            <p>
-                From getting started to fixing an existing
-                network, Southwest WiFi Solutions UK
-                provides practical networking services.
-            </p>
-
-        </div>
-
-
-        <div class="service-grid">
-
-            <article class="service">
-
-                <div class="service-icon">
-                    ◉
-                </div>
-
-                <div>
-                    <h3>
-                        WiFi Installation
-                    </h3>
-
-                    <p>
-                        Get reliable wireless coverage
-                        designed around your property
-                        and the way you use it.
-                    </p>
-                </div>
-
-            </article>
-
-
-            <article class="service">
-
-                <div class="service-icon">
-                    ⌁
-                </div>
-
-                <div>
-                    <h3>
-                        Network Setup
-                    </h3>
-
-                    <p>
-                        Router and access point
-                        configuration for a clean,
-                        dependable network.
-                    </p>
-                </div>
-
-            </article>
-
-
-            <article class="service">
-
-                <div class="service-icon">
-                    ↗
-                </div>
-
-                <div>
-                    <h3>
-                        WiFi Improvement
-                    </h3>
-
-                    <p>
-                        Improve weak coverage,
-                        connection problems and
-                        everyday network performance.
-                    </p>
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- STATEMENT -->
-
-    <section class="statement">
-
-        <h2>
-            From one device
-            to the whole
-            <span>home.</span>
-        </h2>
-
-        <p>
-            Phones, laptops, TVs, consoles, smart devices
-            and everything in between. Your network should
-            be ready for all of them.
-        </p>
-
-    </section>
-
-
-    <!-- CTA -->
-
-    <section class="cta">
-
-        <div class="eyebrow">
+        <div class="hero-eyebrow">
             Southwest WiFi Solutions UK
         </div>
 
+        <h1>
+            The connection
+            <span>you can count on.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+            Thoughtfully designed WiFi and networking
+            for the places that matter.
+        </p>
+
+        <div class="hero-actions">
+
+            <a
+                href="/swwsuk/services/"
+                class="primary-button"
+            >
+                Explore services
+            </a>
+
+            <a
+                href="/swwsuk/contact/"
+                class="text-button"
+            >
+                Learn more →
+            </a>
+
+        </div>
+
+
+        <div class="hero-art">
+
+            <div class="hero-light"></div>
+
+            <div class="signal three"></div>
+            <div class="signal two"></div>
+            <div class="signal one"></div>
+
+            <div class="signal-core"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     STATEMENT
+========================================= -->
+
+<section class="statement">
+
+    <h2>
+        WiFi should be
+        <span>invisible.</span>
+    </h2>
+
+    <p>
+        No complicated setup. No wondering why one room
+        works and another doesn't. Just a connection that
+        quietly does what it needs to do.
+    </p>
+
+</section>
+
+
+
+<!-- =========================================
+     FEATURE
+========================================= -->
+
+<section class="feature">
+
+    <div class="feature-eyebrow">
+        Designed around your space
+    </div>
+
+    <h2>
+        Your home.
+        <span>Your network.</span>
+    </h2>
+
+    <p class="feature-description">
+        Every property is different. We consider the space,
+        the devices and the way you use your network to
+        create a solution that makes sense.
+    </p>
+
+
+    <div class="product-stage"></div>
+
+</section>
+
+
+
+<!-- =========================================
+     SPLIT FEATURE
+========================================= -->
+
+<section class="split">
+
+    <div class="split-visual">
+
+        <div class="orbit"></div>
+
+    </div>
+
+
+    <div class="split-content">
+
+        <div class="eyebrow">
+            One network
+        </div>
+
         <h2>
-            Let's get you connected.
+            Everything
+            connected.
         </h2>
 
         <p>
-            Tell us what you're dealing with and
-            we'll help you find the right solution.
+            Phones. Laptops. TVs. Consoles.
+            Smart home devices. Work equipment.
+            Your network should be ready for all of it.
         </p>
 
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SERVICES
+========================================= -->
+
+<section class="services">
+
+    <div class="services-heading">
+
+        <div class="eyebrow">
+            Services
+        </div>
+
+        <h2>
+            Connectivity,
+            without the complication.
+        </h2>
+
+        <p>
+            From a completely new installation to improving
+            an existing network, we focus on practical,
+            reliable solutions.
+        </p>
+
+    </div>
+
+
+    <div class="service-list">
+
+
         <a
-            class="button button-primary"
-            href="/swwsuk/contact/"
+            href="/swwsuk/services/"
+            class="service-item"
         >
-            Get in touch
+
+            <div class="service-number">
+                01
+            </div>
+
+            <div>
+
+                <h3>
+                    WiFi Installation
+                </h3>
+
+                <p>
+                    Wireless coverage designed around
+                    your property and everyday use.
+                </p>
+
+            </div>
+
+            <div class="service-arrow">
+                →
+            </div>
+
         </a>
 
-    </section>
+
+        <a
+            href="/swwsuk/services/"
+            class="service-item"
+        >
+
+            <div class="service-number">
+                02
+            </div>
+
+            <div>
+
+                <h3>
+                    Network Setup
+                </h3>
+
+                <p>
+                    Router and access point configuration
+                    for a dependable network.
+                </p>
+
+            </div>
+
+            <div class="service-arrow">
+                →
+            </div>
+
+        </a>
+
+
+        <a
+            href="/swwsuk/services/"
+            class="service-item"
+        >
+
+            <div class="service-number">
+                03
+            </div>
+
+            <div>
+
+                <h3>
+                    WiFi Improvement
+                </h3>
+
+                <p>
+                    Practical help with weak coverage,
+                    reliability and network performance.
+                </p>
+
+            </div>
+
+            <div class="service-arrow">
+                →
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL STATEMENT
+========================================= -->
+
+<section class="final">
+
+    <h2>
+        Better WiFi.
+        <span>Less to think about.</span>
+    </h2>
+
+    <p>
+        A well-designed network should disappear into
+        everyday life. That's the idea.
+    </p>
+
+</section>
+
+
+
+<!-- =========================================
+     CTA
+========================================= -->
+
+<section class="cta">
+
+    <h2>
+        Let's get connected.
+    </h2>
+
+    <p>
+        Have a WiFi problem or planning a new setup?
+        Get in touch with Southwest WiFi Solutions UK.
+    </p>
+
+    <a
+        href="/swwsuk/contact/"
+        class="primary-button"
+    >
+        Contact us
+    </a>
+
+</section>
+
 
 </main>
 
+
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -976,5 +1300,6 @@
 
 </footer>
 
+
 </body>
-</html>
+</html>*
