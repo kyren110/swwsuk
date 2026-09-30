@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Southwest WiFi Solutions UK</title>
-    <meta name="description" content="Southwest WiFi Solutions UK — modern WiFi and networking solutions.">
+    <meta name="description" content="Modern WiFi and networking solutions from Southwest WiFi Solutions UK.">
 
     <style>
         :root {
-            --black: #020507;
-            --black-2: #050a0d;
-            --panel: #071116;
-            --cyan: #00eaff;
-            --cyan-soft: #7cffff;
-            --cyan-dark: #00aebe;
-            --white: #f4ffff;
-            --grey: #82949b;
-            --line: rgba(0, 234, 255, .15);
+            --black: #030607;
+            --surface: #080d0f;
+            --cyan: #00e5f5;
+            --white: #f4fafa;
+            --muted: #89979b;
+            --line: rgba(255,255,255,.09);
         }
 
         * {
@@ -34,32 +31,11 @@
             background: var(--black);
             color: var(--white);
             font-family:
-                Inter,
-                ui-sans-serif,
                 -apple-system,
                 BlinkMacSystemFont,
                 "Segoe UI",
                 sans-serif;
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            background:
-                linear-gradient(
-                    rgba(0, 234, 255, .018) 1px,
-                    transparent 1px
-                ),
-                linear-gradient(
-                    90deg,
-                    rgba(0, 234, 255, .018) 1px,
-                    transparent 1px
-                );
-            background-size: 55px 55px;
-            mask-image: linear-gradient(to bottom, black, transparent 85%);
+            line-height: 1.6;
         }
 
         a {
@@ -67,586 +43,435 @@
             text-decoration: none;
         }
 
-        /* NAVIGATION */
+        /* NAV */
 
         nav {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0, 234, 255, .08);
-            background: rgba(2, 5, 7, .78);
-            backdrop-filter: blur(20px);
+            z-index: 100;
+            border-bottom: 1px solid var(--line);
+            background: rgba(3,6,7,.82);
+            backdrop-filter: blur(18px);
         }
 
         .nav {
-            max-width: 1250px;
+            max-width: 1180px;
+            height: 70px;
             margin: auto;
-            height: 72px;
-            padding: 0 28px;
+            padding: 0 25px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        .brand {
+        .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            gap: 10px;
+            font-size: 13px;
+            font-weight: 650;
+            letter-spacing: .8px;
         }
 
-        .brand-mark {
-            width: 30px;
-            height: 30px;
-            position: relative;
+        .logo-mark {
+            width: 25px;
+            height: 25px;
             border: 1px solid var(--cyan);
-            display: grid;
-            place-items: center;
-            box-shadow: 0 0 18px rgba(0, 234, 255, .25);
+            position: relative;
         }
 
-        .brand-mark::before,
-        .brand-mark::after {
+        .logo-mark::after {
             content: "";
             position: absolute;
+            width: 7px;
+            height: 7px;
             background: var(--cyan);
+            border-radius: 50%;
+            top: 8px;
+            left: 8px;
         }
 
-        .brand-mark::before {
-            width: 13px;
-            height: 1px;
-        }
-
-        .brand-mark::after {
-            width: 1px;
-            height: 13px;
-        }
-
-        .nav-links {
+        .links {
             display: flex;
-            gap: 34px;
+            gap: 30px;
             list-style: none;
         }
 
-        .nav-links a {
-            color: #8ea1a8;
-            font-size: 12px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: .25s;
+        .links a {
+            color: var(--muted);
+            font-size: 13px;
+            transition: .2s;
         }
 
-        .nav-links a:hover {
-            color: var(--cyan);
+        .links a:hover {
+            color: var(--white);
         }
 
         /* HERO */
 
         .hero {
-            min-height: 100vh;
-            position: relative;
+            min-height: 92vh;
             display: flex;
             align-items: center;
+            position: relative;
             overflow: hidden;
         }
 
-        .hero-glow {
+        .hero::after {
+            content: "";
             position: absolute;
-            width: 700px;
-            height: 700px;
-            right: -180px;
-            top: 50%;
-            transform: translateY(-50%);
+            width: 500px;
+            height: 500px;
+            right: -150px;
+            top: 15%;
+            background: rgba(0,229,245,.055);
+            filter: blur(100px);
             border-radius: 50%;
-            background: rgba(0, 234, 255, .07);
-            filter: blur(110px);
         }
 
-        .hero-content {
-            width: min(1250px, 100%);
+        .hero-inner {
+            max-width: 1180px;
+            width: 100%;
             margin: auto;
-            padding: 150px 28px 100px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: center;
+            padding: 130px 25px 80px;
             position: relative;
             z-index: 2;
         }
 
         .eyebrow {
-            display: flex;
-            align-items: center;
-            gap: 12px;
             color: var(--cyan);
             font-size: 11px;
-            letter-spacing: 2.5px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 28px;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 35px;
-            height: 1px;
-            background: var(--cyan);
-            box-shadow: 0 0 8px var(--cyan);
+            margin-bottom: 24px;
         }
 
         h1 {
-            font-size: clamp(50px, 6.5vw, 88px);
-            line-height: .93;
-            letter-spacing: -5px;
-            max-width: 700px;
+            max-width: 780px;
+            font-size: clamp(52px, 7vw, 86px);
+            line-height: .95;
+            letter-spacing: -4px;
+            font-weight: 650;
         }
 
-        h1 .cyan {
+        h1 span {
             color: var(--cyan);
-            text-shadow:
-                0 0 25px rgba(0, 234, 255, .35);
         }
 
-        .hero-text {
-            margin-top: 30px;
-            max-width: 570px;
-            color: var(--grey);
+        .hero-description {
+            max-width: 560px;
+            color: var(--muted);
             font-size: 17px;
+            margin-top: 28px;
             line-height: 1.8;
         }
 
-        .hero-buttons {
+        .buttons {
             display: flex;
-            gap: 14px;
-            margin-top: 38px;
-            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 35px;
         }
 
         .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 48px;
-            padding: 0 24px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: .25s;
+            padding: 12px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: .2s;
         }
 
-        .button-primary {
+        .primary {
             background: var(--cyan);
-            color: #001013;
-            box-shadow:
-                0 0 25px rgba(0, 234, 255, .2);
+            color: #001012;
         }
 
-        .button-primary:hover {
-            box-shadow:
-                0 0 40px rgba(0, 234, 255, .45);
-            transform: translateY(-2px);
+        .primary:hover {
+            box-shadow: 0 0 25px rgba(0,229,245,.25);
+            transform: translateY(-1px);
         }
 
-        .button-secondary {
-            border: 1px solid rgba(0, 234, 255, .25);
-            color: var(--cyan-soft);
+        .secondary {
+            border: 1px solid var(--line);
+            color: var(--white);
         }
 
-        .button-secondary:hover {
-            background: rgba(0, 234, 255, .06);
-            border-color: var(--cyan);
+        .secondary:hover {
+            border-color: rgba(0,229,245,.4);
         }
 
-        /* NETWORK VISUAL */
+        /* SIMPLE NETWORK */
 
         .network {
-            height: 520px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .network-ring {
             position: absolute;
-            width: 380px;
-            height: 380px;
-            border: 1px solid rgba(0, 234, 255, .13);
-            border-radius: 50%;
-            animation: rotate 25s linear infinite;
+            right: 8%;
+            top: 50%;
+            width: 300px;
+            height: 300px;
+            transform: translateY(-50%);
         }
 
-        .network-ring:nth-child(2) {
-            width: 280px;
-            height: 280px;
-            animation-duration: 18s;
-            animation-direction: reverse;
+        .network-line {
+            position: absolute;
+            height: 1px;
+            background: rgba(0,229,245,.28);
+            transform-origin: left;
         }
 
-        .network-ring:nth-child(3) {
-            width: 480px;
-            height: 480px;
-            animation-duration: 35s;
-        }
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .router {
+        .line-one {
             width: 130px;
-            height: 130px;
-            position: relative;
-            z-index: 5;
-            border: 1px solid var(--cyan);
-            background: rgba(0, 20, 24, .9);
-            display: grid;
-            place-items: center;
-            box-shadow:
-                0 0 30px rgba(0, 234, 255, .18),
-                inset 0 0 30px rgba(0, 234, 255, .05);
+            top: 100px;
+            left: 70px;
+            transform: rotate(-35deg);
         }
 
-        .router-core {
+        .line-two {
+            width: 125px;
+            top: 160px;
+            left: 78px;
+            transform: rotate(35deg);
+        }
+
+        .line-three {
+            width: 105px;
+            top: 130px;
+            left: 80px;
+            transform: rotate(180deg);
+        }
+
+        .network-node {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 1px solid var(--cyan);
+            background: var(--black);
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(0,229,245,.35);
+        }
+
+        .node-main {
             width: 18px;
             height: 18px;
-            border-radius: 50%;
+            top: 121px;
+            left: 140px;
             background: var(--cyan);
-            box-shadow:
-                0 0 12px var(--cyan),
-                0 0 35px var(--cyan);
+            border: none;
+            box-shadow: 0 0 25px rgba(0,229,245,.4);
         }
 
-        .signal {
-            position: absolute;
-            width: 190px;
-            height: 190px;
-            border: 1px solid rgba(0, 234, 255, .18);
-            border-radius: 50%;
-            animation: pulse 3s ease-out infinite;
+        .node-top {
+            top: 47px;
+            right: 48px;
         }
 
-        .signal:nth-child(2) {
-            animation-delay: 1s;
+        .node-bottom {
+            bottom: 47px;
+            right: 48px;
         }
 
-        .signal:nth-child(3) {
-            animation-delay: 2s;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(.3);
-                opacity: .8;
-            }
-
-            100% {
-                transform: scale(2);
-                opacity: 0;
-            }
-        }
-
-        .node {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: var(--cyan);
-            border-radius: 50%;
-            box-shadow:
-                0 0 10px var(--cyan),
-                0 0 25px var(--cyan);
-        }
-
-        .node-1 {
-            top: 18%;
-            right: 22%;
-        }
-
-        .node-2 {
-            bottom: 20%;
-            right: 16%;
-        }
-
-        .node-3 {
-            top: 28%;
-            left: 12%;
-        }
-
-        .node-4 {
-            bottom: 17%;
-            left: 20%;
-        }
-
-        .status {
-            position: absolute;
-            right: 0;
-            bottom: 30px;
-            padding: 12px 15px;
-            border-left: 2px solid var(--cyan);
-            background: rgba(5, 15, 18, .8);
-            font-size: 10px;
-            letter-spacing: 1.5px;
-            color: var(--grey);
-            text-transform: uppercase;
-        }
-
-        .status strong {
-            display: block;
-            color: var(--cyan);
-            margin-bottom: 4px;
+        .node-left {
+            top: 145px;
+            left: 35px;
         }
 
         /* SECTIONS */
 
         section {
-            position: relative;
-            padding: 130px 28px;
-            border-top: 1px solid rgba(255,255,255,.05);
+            padding: 115px 25px;
+            border-top: 1px solid var(--line);
         }
 
         .container {
-            width: min(1150px, 100%);
+            max-width: 1180px;
             margin: auto;
         }
 
-        .section-number {
+        .label {
             color: var(--cyan);
-            font-family: monospace;
             font-size: 11px;
             letter-spacing: 2px;
-            margin-bottom: 18px;
+            text-transform: uppercase;
+            margin-bottom: 17px;
         }
 
         h2 {
-            max-width: 750px;
-            font-size: clamp(36px, 5vw, 62px);
-            letter-spacing: -3px;
+            font-size: clamp(36px, 5vw, 58px);
             line-height: 1;
-            margin-bottom: 25px;
+            letter-spacing: -2.5px;
+            font-weight: 600;
+            max-width: 700px;
         }
 
-        .section-description {
-            color: var(--grey);
-            max-width: 650px;
+        .intro {
+            color: var(--muted);
+            max-width: 600px;
+            margin-top: 22px;
             font-size: 16px;
-            line-height: 1.8;
         }
 
-        /* SERVICE GRID */
+        /* SERVICES */
 
-        .service-grid {
+        .services {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            margin-top: 65px;
+            margin-top: 60px;
             border-top: 1px solid var(--line);
-            border-left: 1px solid var(--line);
         }
 
         .service {
-            min-height: 280px;
-            padding: 35px;
+            padding: 35px 30px 35px 0;
             border-right: 1px solid var(--line);
-            border-bottom: 1px solid var(--line);
-            position: relative;
-            background: rgba(0, 234, 255, .012);
-            transition: .3s;
+            margin-right: 30px;
         }
 
-        .service:hover {
-            background: rgba(0, 234, 255, .045);
-            box-shadow: inset 0 0 60px rgba(0, 234, 255, .025);
-        }
-
-        .service-number {
-            font-family: monospace;
-            color: rgba(0, 234, 255, .45);
-            font-size: 11px;
-            letter-spacing: 2px;
+        .service:last-child {
+            border-right: none;
+            margin-right: 0;
         }
 
         .service-icon {
-            margin: 45px 0 22px;
             color: var(--cyan);
-            font-size: 28px;
-            text-shadow: 0 0 15px rgba(0, 234, 255, .4);
+            font-size: 24px;
+            margin-bottom: 25px;
         }
 
         .service h3 {
-            font-size: 19px;
-            margin-bottom: 12px;
+            font-size: 18px;
+            margin-bottom: 10px;
         }
 
         .service p {
-            color: var(--grey);
+            color: var(--muted);
             font-size: 14px;
             line-height: 1.7;
         }
 
-        /* INFO STRIP */
+        /* SIMPLE FEATURE */
 
-        .info-strip {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        .feature {
+            margin-top: 80px;
+            padding: 35px 0;
             border-top: 1px solid var(--line);
             border-bottom: 1px solid var(--line);
-            margin-top: 80px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
         }
 
-        .info {
-            padding: 30px;
-            border-right: 1px solid var(--line);
-        }
-
-        .info:last-child {
-            border-right: none;
-        }
-
-        .info-label {
-            color: var(--grey);
-            font-size: 10px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .info-value {
+        .feature-title {
             color: var(--cyan);
-            font-family: monospace;
-            font-size: 14px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .feature-text {
+            color: var(--muted);
+            max-width: 650px;
         }
 
         /* CTA */
 
         .cta {
             text-align: center;
-            overflow: hidden;
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(0, 234, 255, .09),
-                    transparent 55%
-                );
+            padding: 140px 25px;
         }
 
         .cta h2 {
-            margin-left: auto;
-            margin-right: auto;
+            margin: auto;
         }
 
         .cta p {
-            color: var(--grey);
-            max-width: 600px;
-            margin: 0 auto 35px;
+            color: var(--muted);
+            max-width: 520px;
+            margin: 22px auto 30px;
         }
 
         /* FOOTER */
 
         footer {
-            padding: 45px 28px;
-            border-top: 1px solid rgba(0, 234, 255, .08);
-            color: var(--grey);
-            font-size: 11px;
-            letter-spacing: .8px;
+            border-top: 1px solid var(--line);
+            padding: 30px 25px;
+            color: var(--muted);
+            font-size: 12px;
         }
 
         .footer-inner {
-            width: min(1150px, 100%);
+            max-width: 1180px;
             margin: auto;
             display: flex;
             justify-content: space-between;
-            gap: 30px;
         }
 
         /* MOBILE */
 
         @media (max-width: 850px) {
-            .nav {
-                height: 65px;
-            }
-
-            .nav-links {
-                gap: 14px;
-            }
-
-            .nav-links a {
-                font-size: 9px;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                padding-top: 140px;
-            }
 
             .network {
-                height: 350px;
-                order: -1;
+                display: none;
             }
 
-            .network-ring:nth-child(3) {
-                width: 350px;
-                height: 350px;
+            .links {
+                gap: 15px;
             }
 
-            .service-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .info-strip {
-                grid-template-columns: 1fr;
-            }
-
-            .info {
-                border-right: none;
-                border-bottom: 1px solid var(--line);
-            }
-
-            .info:last-child {
-                border-bottom: none;
+            .links a {
+                font-size: 11px;
             }
 
             h1 {
                 letter-spacing: -3px;
             }
 
-            section {
-                padding: 90px 22px;
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .service {
+                border-right: none;
+                border-bottom: 1px solid var(--line);
+                margin-right: 0;
+                padding: 30px 0;
+            }
+
+            .service:last-child {
+                border-bottom: none;
+            }
+
+            .feature {
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
         }
 
-        @media (max-width: 500px) {
-            .brand {
-                font-size: 10px;
+        @media (max-width: 550px) {
+
+            .logo {
+                font-size: 11px;
             }
 
-            .nav-links {
-                gap: 9px;
+            .links {
+                gap: 10px;
             }
 
-            .nav-links a {
-                font-size: 8px;
+            .links a {
+                font-size: 9px;
+            }
+
+            .hero-inner {
+                padding-top: 120px;
             }
 
             h1 {
                 font-size: 50px;
             }
 
-            .network {
-                transform: scale(.78);
+            .buttons {
+                flex-direction: column;
+                align-items: flex-start;
             }
 
             .footer-inner {
                 flex-direction: column;
+                gap: 8px;
             }
         }
     </style>
@@ -656,17 +481,19 @@
 
 <nav>
     <div class="nav">
-        <a href="/swwsuk/" class="brand">
-            <span class="brand-mark"></span>
+
+        <a href="/swwsuk/" class="logo">
+            <span class="logo-mark"></span>
             Southwest WiFi Solutions UK
         </a>
 
-        <ul class="nav-links">
+        <ul class="links">
             <li><a href="/swwsuk/">Home</a></li>
             <li><a href="/swwsuk/about/">About</a></li>
             <li><a href="/swwsuk/services/">Services</a></li>
             <li><a href="/swwsuk/contact/">Contact</a></li>
         </ul>
+
     </div>
 </nav>
 
@@ -674,127 +501,129 @@
 
     <section class="hero">
 
-        <div class="hero-glow"></div>
+        <div class="hero-inner">
 
-        <div class="hero-content">
-
-            <div>
-                <div class="eyebrow">
-                    Network Infrastructure
-                </div>
-
-                <h1>
-                    CONNECTIVITY
-                    <span class="cyan">REDEFINED.</span>
-                </h1>
-
-                <p class="hero-text">
-                    Southwest WiFi Solutions UK delivers modern wireless
-                    and networking solutions built around reliability,
-                    coverage and performance.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="/swwsuk/services/" class="button button-primary">
-                        Explore services
-                    </a>
-
-                    <a href="/swwsuk/contact/" class="button button-secondary">
-                        Start a project
-                    </a>
-                </div>
+            <div class="eyebrow">
+                WiFi & Networking
             </div>
 
-            <div class="network">
+            <h1>
+                WiFi that<br>
+                <span>just works.</span>
+            </h1>
 
-                <div class="network-ring"></div>
-                <div class="network-ring"></div>
-                <div class="network-ring"></div>
+            <p class="hero-description">
+                Southwest WiFi Solutions UK provides reliable,
+                carefully configured networking solutions for
+                homes and businesses.
+            </p>
 
-                <div class="signal"></div>
-                <div class="signal"></div>
-                <div class="signal"></div>
+            <div class="buttons">
+                <a href="/swwsuk/services/" class="button primary">
+                    Our services
+                </a>
 
-                <div class="router">
-                    <div class="router-core"></div>
-                </div>
-
-                <div class="node node-1"></div>
-                <div class="node node-2"></div>
-                <div class="node node-3"></div>
-                <div class="node node-4"></div>
-
-                <div class="status">
-                    <strong>● SYSTEM READY</strong>
-                    Wireless infrastructure
-                </div>
-
+                <a href="/swwsuk/contact/" class="button secondary">
+                    Get in touch
+                </a>
             </div>
+
+        </div>
+
+        <div class="network">
+
+            <div class="network-line line-one"></div>
+            <div class="network-line line-two"></div>
+            <div class="network-line line-three"></div>
+
+            <div class="network-node node-main"></div>
+            <div class="network-node node-top"></div>
+            <div class="network-node node-bottom"></div>
+            <div class="network-node node-left"></div>
 
         </div>
 
     </section>
 
+
     <section>
 
         <div class="container">
 
-            <div class="section-number">01 / CAPABILITIES</div>
+            <div class="label">
+                What we do
+            </div>
 
             <h2>
-                The network behind
-                everything.
+                Simple networking.
+                Properly done.
             </h2>
 
-            <p class="section-description">
-                Good connectivity should disappear into the background.
-                We focus on creating networks that simply work —
-                consistently, efficiently and across the spaces
-                that matter.
+            <p class="intro">
+                We help improve wireless coverage, network
+                reliability and connectivity without making
+                things unnecessarily complicated.
             </p>
 
-            <div class="service-grid">
+
+            <div class="services">
 
                 <div class="service">
-                    <div class="service-number">SYS / 001</div>
 
-                    <div class="service-icon">◌</div>
+                    <div class="service-icon">⌁</div>
 
                     <h3>WiFi Installation</h3>
 
                     <p>
-                        Wireless infrastructure designed around the
-                        property, coverage requirements and devices
-                        using the network.
+                        Wireless coverage planned around the
+                        property and the way the network is used.
                     </p>
+
                 </div>
 
+
                 <div class="service">
-                    <div class="service-number">SYS / 002</div>
 
-                    <div class="service-icon">⌁</div>
+                    <div class="service-icon">◌</div>
 
-                    <h3>Network Configuration</h3>
+                    <h3>Network Setup</h3>
 
                     <p>
-                        Router, access point and network configuration
-                        focused on creating a stable and dependable
-                        connection.
+                        Router and access point configuration
+                        designed for a stable connection.
                     </p>
+
                 </div>
 
+
                 <div class="service">
-                    <div class="service-number">SYS / 003</div>
 
-                    <div class="service-icon">◎</div>
+                    <div class="service-icon">↗</div>
 
-                    <h3>Coverage Improvement</h3>
+                    <h3>WiFi Improvement</h3>
 
                     <p>
-                        Identify weak areas and performance problems
-                        and develop practical improvements for an
-                        existing network.
+                        Practical improvements for existing
+                        networks experiencing coverage or
+                        performance problems.
                     </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-title">
+                    BUILT AROUND YOUR NETWORK
+                </div>
+
+                <div class="feature-text">
+                    Every property is different. We look at the
+                    environment, coverage requirements and how
+                    devices are actually being used before
+                    deciding on the right approach.
                 </div>
 
             </div>
@@ -803,64 +632,26 @@
 
     </section>
 
-    <section>
-
-        <div class="container">
-
-            <div class="section-number">02 / THE DIFFERENCE</div>
-
-            <h2>
-                Built around
-                your connection.
-            </h2>
-
-            <p class="section-description">
-                Every environment is different. Our approach is to
-                understand how a network is being used before
-                determining how it should be configured.
-            </p>
-
-            <div class="info-strip">
-
-                <div class="info">
-                    <div class="info-label">Focus</div>
-                    <div class="info-value">RELIABILITY</div>
-                </div>
-
-                <div class="info">
-                    <div class="info-label">Priority</div>
-                    <div class="info-value">COVERAGE</div>
-                </div>
-
-                <div class="info">
-                    <div class="info-label">Approach</div>
-                    <div class="info-value">TAILORED</div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
 
     <section class="cta">
 
         <div class="container">
 
-            <div class="section-number">03 / CONNECTION</div>
+            <div class="label">
+                Get connected
+            </div>
 
             <h2>
-                Ready to upgrade
-                your network?
+                Better WiFi starts here.
             </h2>
 
             <p>
-                Tell us what you're working with and what you want
-                your network to do.
+                Have a WiFi or networking problem?
+                Get in touch with Southwest WiFi Solutions UK.
             </p>
 
-            <a href="/swwsuk/contact/" class="button button-primary">
-                Contact Southwest WiFi
+            <a href="/swwsuk/contact/" class="button primary">
+                Contact us
             </a>
 
         </div>
@@ -869,16 +660,21 @@
 
 </main>
 
+
 <footer>
+
     <div class="footer-inner">
+
         <div>
             © 2026 Southwest WiFi Solutions UK
         </div>
 
         <div>
-            WIRELESS / NETWORKING / CONNECTIVITY
+            WiFi & Networking Solutions
         </div>
+
     </div>
+
 </footer>
 
 </body>
